@@ -1,0 +1,26 @@
+.filterLink {
+  padding: 8px 10px;
+  border-radius: $radius-md;
+  background: $ui-secondary;
+  font-weight: $fw-semibold;
+  font-size: $fs-md;
+  color: $text-primary;
+  text-decoration: none;
+  transition: background-color 0.2s ease-out;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: darken($ui-secondary, 10);
+    }
+  }
+
+  &:active {
+    background-color: $ui-secondary;
+  }
+
+  &Active {
+    color: $bg;
+    background-color: $ui-base;
+    pointer-events: none;
+  }
+}

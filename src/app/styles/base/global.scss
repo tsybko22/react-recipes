@@ -1,0 +1,20 @@
+body {
+  background-color: $bg;
+  color: $text-base;
+  font-weight: $fw-md;
+  font-size: $fs-md;
+  font-family: $family;
+}
+
+:global .visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  clip: rect(0, 0, 0, 0) !important;
+  stroke: transparent !important;
+}

@@ -1,0 +1,13 @@
+.input {
+  padding: 15px 0;
+  font-weight: $fw-md;
+  font-size: $fs-md;
+  border-radius: $radius-md;
+  color: $text-base;
+  background: $ui-secondary;
+  border: none;
+
+  &::placeholder {
+    color: $text-primary;
+  }
+}

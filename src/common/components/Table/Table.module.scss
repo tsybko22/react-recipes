@@ -1,0 +1,31 @@
+.table {
+  border-spacing: 0px;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: $radius-sm;
+
+  &Row {
+    width: 100%;
+    background-color: $ui-secondary;
+    text-align: center;
+
+    &:nth-child(even) {
+      background-color: darken($ui-secondary, 3);
+    }
+  }
+
+  &Header,
+  &Data {
+    padding: 10px;
+    font-weight: $fw-md;
+    font-size: $fs-md;
+    color: $text-primary;
+  }
+
+  &Header {
+    font-weight: $fw-semibold;
+    font-size: $fs-lg;
+    color: lighten($text-secondary, 10);
+    background-color: darken($ui-secondary, 7);
+  }
+}

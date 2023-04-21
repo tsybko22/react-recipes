@@ -1,0 +1,16 @@
+.favoritesPage {
+  padding: 15px 0;
+
+  &Btn {
+    margin-bottom: 50px;
+  }
+}
+
+.errorTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: $fs-xl;
+  text-align: center;
+}

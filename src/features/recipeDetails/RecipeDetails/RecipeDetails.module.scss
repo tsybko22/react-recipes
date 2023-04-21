@@ -1,0 +1,83 @@
+.details {
+  &Img {
+    margin-bottom: 10px;
+    border-radius: $radius-sm;
+  }
+
+  &Info {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    font-weight: $fw-md;
+    font-size: $fs-sm;
+    color: $text-secondary;
+  }
+
+  &Table {
+    width: 100%;
+    height: 100%;
+  }
+
+  &Title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &Instructions {
+    text-align: justify;
+    margin-bottom: 20px;
+    font-weight: $fw-semibold;
+    font-size: $fs-md;
+    color: $text-secondary;
+  }
+
+  &Video {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: $radius-sm;
+  }
+
+  &Source {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    color: $text-secondary;
+
+    &Link {
+      color: $text-secondary;
+      word-break: break-all;
+
+      @media (hover: hover) {
+        &:hover {
+          color: $text-primary;
+        }
+      }
+
+      &:active {
+        color: lighten($text-primary, 15);
+      }
+    }
+  }
+}
+
+.split {
+  display: grid;
+  gap: 25px;
+  margin-bottom: 35px;
+
+  @media (min-width: $desktop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.errorTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: $fs-xl;
+  text-align: center;
+}

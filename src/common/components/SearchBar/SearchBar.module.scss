@@ -1,0 +1,52 @@
+.search {
+  &Form {
+    position: relative;
+    width: 100%;
+    max-width: 435px;
+    margin-bottom: 45px;
+  }
+
+  &Input {
+    width: 100%;
+    padding-left: 38px;
+    padding-right: 95px;
+  }
+
+  &Icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: $text-primary;
+    pointer-events: none;
+  }
+
+  &Btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8px 10px;
+    border: none;
+    border-radius: $radius-md;
+    background: $ui-base;
+    font-weight: $fw-semibold;
+    font-size: $fs-md;
+    color: $ui-secondary;
+    transition: background-color 0.2s ease-out;
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: lighten($ui-base, 10);
+      }
+    }
+
+    &:active {
+      background-color: darken($ui-base, 5);
+    }
+  }
+}

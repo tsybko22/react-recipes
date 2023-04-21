@@ -1,0 +1,21 @@
+.h1 {
+  font-weight: $fw-semibold;
+  font-size: $fs-xl;
+  color: $text-base;
+}
+
+.h2 {
+  font-weight: $fw-semibold;
+  font-size: $fs-lg;
+  color: $text-base;
+}
+
+.h3 {
+  font-weight: $fw-md;
+  font-size: $fs-sm;
+  color: $text-base;
+}
+
+.primary {
+  color: $text-primary;
+}
