@@ -40,7 +40,7 @@ const initialState = {
 
 const setLoading = (state) => {
   state.status = 'pending';
-  state.error = '';
+  state.error = null;
 };
 
 const setError = (state, action) => {
@@ -81,6 +81,9 @@ const recipesSlice = createSlice({
       state.favoriteRecipes = updatedFavoriteRecipes;
       storage.saveState(state.favoriteRecipes, 'favorites');
     },
+    clearErrors(state) {
+      state.error = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -101,7 +104,7 @@ const recipesSlice = createSlice({
   },
 });
 
-export const { addToFavorites, removeFromFavorites } = recipesSlice.actions;
+export const { addToFavorites, removeFromFavorites, clearErrors } = recipesSlice.actions;
 export const recipesReducer = recipesSlice.reducer;
 
 export const selectStatuses = (state) => ({
