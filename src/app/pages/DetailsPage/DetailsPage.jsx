@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import BtnWithIcon from '@/common/components/BtnWithIcon';
-import RecipeDetails from '@/features/recipeDetails/RecipeDetails/RecipeDetails';
+import RecipeDetails from '@/features/recipeDetails/RecipeDetails/';
 import {
   fetchRecipeDetailsById,
   selectRecipeDetails,

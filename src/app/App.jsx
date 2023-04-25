@@ -8,7 +8,7 @@ import DetailsPage from './pages/DetailsPage';
 import FavoritesPage from './pages/FavoritesPage';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
-import SearchPage from './pages/SearchPage/SearchPage';
+import SearchPage from './pages/SearchPage';
 
 const App = () => (
   <Container>

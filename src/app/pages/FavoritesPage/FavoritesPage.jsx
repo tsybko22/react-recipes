@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import BtnWithIcon from '@/common/components/BtnWithIcon/BtnWithIcon';
+import BtnWithIcon from '@/common/components/BtnWithIcon/';
 import Htag from '@/common/components/Htag';
-import RecipesList from '@/features/recipes/RecipesList/RecipesList';
+import RecipesList from '@/features/recipes/RecipesList/';
 import { selectFavoriteRecipes } from '@/features/recipes/recipesSlice';
 
 import classes from './FavoritesPage.module.scss';

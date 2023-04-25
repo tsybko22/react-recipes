@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import RecipesList from '@/features/recipes/RecipesList/RecipesList';
+import RecipesList from '@/features/recipes/RecipesList/';
 import {
   fetchRecipesByCategory,
   selectRecipesByCategory,

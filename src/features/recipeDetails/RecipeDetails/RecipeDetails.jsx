@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import Htag from '@/common/components/Htag';
 import Loader from '@/common/components/Loader';
-import Table from '@/common/components/Table/Table.jsx';
+import Table from '@/common/components/Table';
 
 import { selectStatuses } from '../recipeDetailsSlice.js';
 
