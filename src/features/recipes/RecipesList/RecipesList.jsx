@@ -13,7 +13,7 @@ import {
 
 import classes from './RecipesList.module.scss';
 
-const RecipesList = ({ recipes }) => {
+const RecipesList = ({ recipes = [] }) => {
   const dispatch = useDispatch();
   const { error, status } = useSelector(selectStatuses);
   const favoriteRecipes = useSelector(selectFavoriteRecipes);
@@ -31,15 +31,16 @@ const RecipesList = ({ recipes }) => {
 
   return (
     <ul className={classes.recipesList}>
-      {recipes.map((recipe) => (
-        <RecipeCard
-          key={recipe.idMeal}
-          isFavorite={checkIsFavorite(recipe.idMeal)}
-          onFavoriteAddClick={() => dispatch(addToFavorites(recipe))}
-          onFavoriteRemoveClick={() => dispatch(removeFromFavorites(recipe.idMeal))}
-          {...recipe}
-        />
-      ))}
+      {recipes.length > 0 &&
+        recipes.map((recipe) => (
+          <RecipeCard
+            key={recipe.idMeal}
+            isFavorite={checkIsFavorite(recipe.idMeal)}
+            onFavoriteAddClick={() => dispatch(addToFavorites(recipe))}
+            onFavoriteRemoveClick={() => dispatch(removeFromFavorites(recipe.idMeal))}
+            {...recipe}
+          />
+        ))}
     </ul>
   );
 };

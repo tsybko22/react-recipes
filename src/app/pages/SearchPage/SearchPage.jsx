@@ -11,12 +11,11 @@ import {
 const SearchPage = () => {
   const dispatch = useDispatch();
   const { searchTerm } = useParams();
+  const recipes = useSelector(selectRecipesBySearch);
 
   useEffect(() => {
     dispatch(fetchRecipesBySearch(searchTerm));
   }, [dispatch, searchTerm]);
-
-  const recipes = useSelector(selectRecipesBySearch);
 
   return <RecipesList recipes={recipes} />;
 };

@@ -11,12 +11,11 @@ import {
 const CategoryPage = () => {
   const dispatch = useDispatch();
   const { category } = useParams();
+  const recipes = useSelector(selectRecipesByCategory);
 
   useEffect(() => {
     dispatch(fetchRecipesByCategory(category));
   }, [dispatch, category]);
-
-  const recipes = useSelector(selectRecipesByCategory);
 
   return <RecipesList recipes={recipes} />;
 };

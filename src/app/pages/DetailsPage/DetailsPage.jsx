@@ -15,12 +15,11 @@ const DetailsPage = () => {
   const dispatch = useDispatch();
   const { recipeId } = useParams();
   const navigate = useNavigate();
+  const details = useSelector(selectRecipeDetails);
 
   useEffect(() => {
     dispatch(fetchRecipeDetailsById(recipeId));
   }, [dispatch, recipeId]);
-
-  const details = useSelector(selectRecipeDetails);
 
   return (
     <section className={classes.detailsPage}>
