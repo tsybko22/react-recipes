@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import FilterItem from '@/common/components/FilterItem';
-import Htag from '@/common/components/Htag';
 import Loader from '@/common/components/Loader';
+import Typography from '@/common/components/Typography';
 import {
   fetchCategories,
   selectCategories,
@@ -25,14 +25,14 @@ const CategoryFilter = () => {
 
   if (error) {
     return (
-      <Htag className={classes.errorTitle} tag='h2'>
+      <Typography className={classes.errorTitle} tag='h2' variant='h2'>
         {error}
-      </Htag>
+      </Typography>
     );
   }
 
   return (
-    <ul className={classes.categoriesList}>
+    <ul className={classes.categoriesFilter}>
       {categories.map((category) => (
         <FilterItem
           key={category}

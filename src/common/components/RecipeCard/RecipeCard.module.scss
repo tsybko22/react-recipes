@@ -12,6 +12,7 @@
     font-size: $fs-md;
     color: $text-base;
     text-decoration: none;
+    transition: color 0.2s ease-out;
 
     @media (hover: hover) {
       &:hover {

@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import Htag from '@/common/components/Htag';
 import Loader from '@/common/components/Loader';
 import RecipeCard from '@/common/components/RecipeCard';
+import Typography from '@/common/components/Typography';
 
 import {
   addToFavorites,
@@ -26,7 +26,11 @@ const RecipesList = ({ recipes = [] }) => {
   }
 
   if (error) {
-    return <Htag tag='h2'>{error}</Htag>;
+    return (
+      <Typography tag='h2' variant='h2'>
+        {error}
+      </Typography>
+    );
   }
 
   return (

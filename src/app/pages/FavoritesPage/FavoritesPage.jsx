@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import BtnWithIcon from '@/common/components/BtnWithIcon/';
-import Htag from '@/common/components/Htag';
+import Typography from '@/common/components/Typography';
 import RecipesList from '@/features/recipes/RecipesList/';
 import { selectFavoriteRecipes } from '@/features/recipes/recipesSlice';
 
@@ -30,9 +30,9 @@ const FavoritesPage = () => {
       {recipes.length > 0 ? (
         <RecipesList recipes={recipes} />
       ) : (
-        <Htag className={classes.errorTitle} tag='h2'>
+        <Typography className='errorTitle' tag='h2' variant='h1'>
           No favorites yet.
-        </Htag>
+        </Typography>
       )}
     </section>
   );

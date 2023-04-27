@@ -1,4 +1,4 @@
-import Htag from '@/common/components/Htag';
+import Typography from '@/common/components/Typography';
 
 import classes from './NotFoundPage.module.scss';
 
@@ -37,12 +37,17 @@ const NotFoundPage = () => (
         />
       </svg>
     </span>
-    <Htag className={classes.notFoundPageTitle} tag='h2' variant='primary'>
+    <Typography
+      className={classes.notFoundPageTitle}
+      tag='h2'
+      variant='h1'
+      color='primary'
+    >
       404
-    </Htag>
-    <p className={classes.notFoundPageText}>
+    </Typography>
+    <Typography className={classes.notFoundPageText} tag='p' variant='p'>
       Oops! Something went wrong! Page not found...
-    </p>
+    </Typography>
   </div>
 );
 

@@ -8,9 +8,6 @@
     display: flex;
     gap: 20px;
     justify-content: center;
-    font-weight: $fw-md;
-    font-size: $fs-sm;
-    color: $text-secondary;
   }
 
   &Table {
@@ -24,11 +21,8 @@
   }
 
   &Instructions {
-    text-align: justify;
     margin-bottom: 20px;
-    font-weight: $fw-semibold;
-    font-size: $fs-md;
-    color: $text-secondary;
+    text-align: justify;
   }
 
   &Video {
@@ -71,13 +65,4 @@
   @media (min-width: $desktop) {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-
-.errorTitle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: $fs-xl;
-  text-align: center;
 }

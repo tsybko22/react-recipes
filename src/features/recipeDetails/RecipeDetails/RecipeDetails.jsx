@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 
-import Htag from '@/common/components/Htag';
 import Loader from '@/common/components/Loader';
 import Table from '@/common/components/Table';
+import Typography from '@/common/components/Typography';
 
 import { selectStatuses } from '../recipeDetailsSlice.js';
 
@@ -26,24 +26,24 @@ const RecipeDetails = ({
 
   if (error) {
     return (
-      <Htag className={classes.errorTitle} tag='h2'>
+      <Typography className='errorTitle' tag='h2' variant='h1'>
         {error}
-      </Htag>
+      </Typography>
     );
   }
 
   return (
     <div className={classes.details}>
-      <Htag className={classes.detailsTitle} tag='h2'>
+      <Typography className={classes.detailsTitle} tag='h2' variant='h1'>
         {strMeal}
-      </Htag>
+      </Typography>
       <div className={classes.split}>
         <div className={classes.splitLeft}>
           <img className={classes.detailsImg} src={strMealThumb} alt={strMeal} />
-          <p className={classes.detailsInfo}>
+          <Typography tag='p' variant='p2' className={classes.detailsInfo}>
             <span>Area: {strArea}</span>
             <span>Category: {strCategory}</span>
-          </p>
+          </Typography>
         </div>
         <div className={classes.splitRight}>
           <Table
@@ -53,10 +53,12 @@ const RecipeDetails = ({
           />
         </div>
       </div>
-      <Htag className={classes.detailsTitle} tag='h2' variant='primary'>
+      <Typography className={classes.detailsTitle} tag='h2' variant='h2' color='primary'>
         Instructions
-      </Htag>
-      <p className={classes.detailsInstructions}>{strInstructions}</p>
+      </Typography>
+      <Typography className={classes.detailsInstructions} tag='p' variant='p'>
+        {strInstructions}
+      </Typography>
       {strYoutube && (
         <iframe
           className={classes.detailsVideo}
@@ -69,7 +71,7 @@ const RecipeDetails = ({
         />
       )}
       {strSource && (
-        <Htag tag='h3' className={classes.detailsSource}>
+        <Typography tag='h3' variant='h3' className={classes.detailsSource}>
           Source:{' '}
           <a
             className={classes.detailsSourceLink}
@@ -79,7 +81,7 @@ const RecipeDetails = ({
           >
             {strSource}
           </a>
-        </Htag>
+        </Typography>
       )}
     </div>
   );

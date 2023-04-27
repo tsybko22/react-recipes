@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { GiForkKnifeSpoon } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
 
-import Htag from '../Htag';
+import Typography from '../Typography';
 
 import classes from './Header.module.scss';
 
@@ -11,9 +11,9 @@ const setClasses = ({ isActive }) =>
 
 const Header = () => (
   <header className={classes.header}>
-    <Htag className='visually-hidden' tag='h1'>
+    <Typography className='visually-hidden' tag='h1'>
       React Recipes App
-    </Htag>
+    </Typography>
     <GiForkKnifeSpoon className={classes.headerLogo} />
     <nav>
       <ul className={classes.navList}>
