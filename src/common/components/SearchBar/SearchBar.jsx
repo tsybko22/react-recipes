@@ -35,8 +35,8 @@ const SearchBar = ({ className, ...props }) => {
         placeholder='Search recipe'
         className={classes.searchInput}
         value={value}
-        setValue={setValue}
         required
+        onChange={(evt) => setValue(evt.target.value)}
       />
       <button className={classes.searchBtn} type='submit'>
         Search
