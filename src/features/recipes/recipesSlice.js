@@ -3,10 +3,18 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const fetchRecipesByCategory = createAsyncThunk(
   'recipes/fetchRecipesByCategory',
-  async (category, { rejectWithValue, extra: api }) => {
+  async (category, { rejectWithValue, extra: api, getState }) => {
     try {
+      const isSameRecipes = getState().recipes.recipesByCategories.some(
+        (recipe) => recipe.category === category
+      );
+
+      if (isSameRecipes) {
+        return null;
+      }
+
       const data = await api.getRecipesByCategory(category);
-      return data;
+      return { category, data };
     } catch (err) {
       return rejectWithValue('Sorry, an unexpected error occurred. Try to refresh page.');
     }
@@ -92,7 +100,10 @@ const recipesSlice = createSlice({
       .addCase(fetchRecipesByCategory.fulfilled, (state, action) => {
         state.error = null;
         state.status = 'fulfilled';
-        state.recipesByCategories = action.payload;
+
+        if (action.payload) {
+          state.recipesByCategories.push(action.payload);
+        }
       })
       .addCase(fetchRecipesBySearch.pending, setLoading)
       .addCase(fetchRecipesBySearch.rejected, setError)
@@ -114,4 +125,8 @@ export const selectStatuses = (state) => ({
 
 export const selectRecipesBySearch = (state) => state.recipes.recipesBySearch;
 export const selectFavoriteRecipes = (state) => state.recipes.favoriteRecipes;
-export const selectRecipesByCategory = (state) => state.recipes.recipesByCategories;
+// export const selectRecipesByCategory = (state) => state.recipes.recipesByCategories;
+export const selectRecipesByCategory = (state, category) => {
+  const { recipesByCategories } = state.recipes;
+  return recipesByCategories.find((recipe) => recipe.category === category);
+};

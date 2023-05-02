@@ -11,13 +11,13 @@ import {
 const CategoryPage = () => {
   const dispatch = useDispatch();
   const { category } = useParams();
-  const recipes = useSelector(selectRecipesByCategory);
+  const recipes = useSelector((state) => selectRecipesByCategory(state, category));
 
   useEffect(() => {
     dispatch(fetchRecipesByCategory(category));
   }, [dispatch, category]);
 
-  return <RecipesList recipes={recipes} />;
+  return <RecipesList recipes={recipes?.data} />;
 };
 
 export default CategoryPage;
