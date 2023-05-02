@@ -1,5 +1,5 @@
 import * as storage from '@/common/utils/localStorageApi';
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSelector, createSlice } from '@reduxjs/toolkit';
 
 export const fetchRecipesByCategory = createAsyncThunk(
   'recipes/fetchRecipesByCategory',
@@ -125,7 +125,9 @@ export const selectStatuses = (state) => ({
 
 export const selectRecipesBySearch = (state) => state.recipes.recipesBySearch;
 export const selectFavoriteRecipes = (state) => state.recipes.favoriteRecipes;
-export const selectRecipesByCategory = (state, category) => {
-  const { recipesByCategories } = state.recipes;
-  return recipesByCategories.find((recipe) => recipe.category === category);
-};
+export const selectRecipesByCategory = createSelector(
+  (state) => state.recipes.recipesByCategories,
+  (_, category) => category,
+  (recipesByCategories, category) =>
+    recipesByCategories.find((recipe) => recipe.category === category)
+);
