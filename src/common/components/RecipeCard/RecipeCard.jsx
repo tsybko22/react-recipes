@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import { FaHeart } from 'react-icons/fa';
 import LazyLoad from 'react-lazyload';
 import { Link } from 'react-router-dom';
+import Loader from '../Loader';
 
 import classes from './RecipeCard.module.scss';
 
@@ -16,7 +17,13 @@ const RecipeCard = ({
   <li>
     <article className={classes.recipe}>
       <Link to={`/recipe/${idMeal}`}>
-        <LazyLoad height={150} offset={75} once>
+        <LazyLoad
+          height={150}
+          offset={[-150, 0]}
+          debounce={500}
+          placeholder={<Loader />}
+          once
+        >
           <img
             alt={strMeal}
             className={classes.recipeImg}
