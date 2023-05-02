@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import { FaHeart } from 'react-icons/fa';
 import LazyLoad from 'react-lazyload';
 import { Link } from 'react-router-dom';
+
 import Loader from '../Loader';
 
 import classes from './RecipeCard.module.scss';
