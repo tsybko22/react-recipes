@@ -5,9 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import BtnWithIcon from '@/common/components/BtnWithIcon/';
 import Typography from '@/common/components/Typography';
 import RecipesList from '@/features/recipes/RecipesList/';
-import { selectFavoriteRecipes } from '@/features/recipes/recipesSlice';
-
-import { clearErrors } from '../../../features/recipes/recipesSlice';
+import { resetErrors, selectFavoriteRecipes } from '@/features/recipes/recipesSlice';
 
 import classes from './FavoritesPage.module.scss';
 
@@ -17,7 +15,7 @@ const FavoritesPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(clearErrors());
+    dispatch(resetErrors());
   }, [dispatch]);
 
   return (

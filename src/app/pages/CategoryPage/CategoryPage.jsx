@@ -11,6 +11,7 @@ import {
 const CategoryPage = () => {
   const dispatch = useDispatch();
   const { category } = useParams();
+  console.log('🚀 => file: CategoryPage.jsx:14 => CategoryPage => category\n', category);
   const recipes = useSelector(selectRecipesByCategory);
 
   useEffect(() => {

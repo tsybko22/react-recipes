@@ -81,7 +81,7 @@ const recipesSlice = createSlice({
       state.favoriteRecipes = updatedFavoriteRecipes;
       storage.saveState(state.favoriteRecipes, 'favorites');
     },
-    clearErrors(state) {
+    resetErrors(state) {
       state.error = null;
     },
   },
@@ -104,7 +104,7 @@ const recipesSlice = createSlice({
   },
 });
 
-export const { addToFavorites, removeFromFavorites, clearErrors } = recipesSlice.actions;
+export const { addToFavorites, removeFromFavorites, resetErrors } = recipesSlice.actions;
 export const recipesReducer = recipesSlice.reducer;
 
 export const selectStatuses = (state) => ({
