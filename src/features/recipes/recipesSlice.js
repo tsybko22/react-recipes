@@ -125,7 +125,6 @@ export const selectStatuses = (state) => ({
 
 export const selectRecipesBySearch = (state) => state.recipes.recipesBySearch;
 export const selectFavoriteRecipes = (state) => state.recipes.favoriteRecipes;
-// export const selectRecipesByCategory = (state) => state.recipes.recipesByCategories;
 export const selectRecipesByCategory = (state, category) => {
   const { recipesByCategories } = state.recipes;
   return recipesByCategories.find((recipe) => recipe.category === category);
